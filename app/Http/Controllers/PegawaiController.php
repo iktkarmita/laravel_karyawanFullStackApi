@@ -172,9 +172,13 @@ class PegawaiController extends Controller
         //
         $pegawai = Pegawai::find($id);
         $pegawai->delete();
+        $response = [
+            'message' => 'Berhasil di delete',
+            'data' => $pegawai
+        ];
 
         //return redirect('pegawai');
-        return response()->json($pegawai);
+        return response()->json($response);
     }
     //public function pdf()
     //{
